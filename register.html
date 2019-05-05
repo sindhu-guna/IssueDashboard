@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<div class="col-md-6 col-md-offset-3">
+<h2 style="text-align:center;color:blue">New Issue</h2>
+<form name="form" ng-submit="vm.register()" role="form">
+<div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+<label for="username">Title</label>
+<input type="text" name="title" id="title" class="form-control" ng-model="vm.user.title" required />
+<span ng-show="form.title.$dirty && form.title.$error.required" class="help-block">Title is required</span>
+</div>
+<div class="form-group" ng-class="{ 'has-error': form.description.$dirty && form.description.$error.required }">
+<label for="username">Description</label>
+<textarea rows="4" cols="50" name="description" id="description" class="form-control" ng-model="vm.user.description" required />
+<span ng-show="form.description.$dirty && form.description.$error.required" class="help-block">Description is required</span>
+</div>
+<div class="form-actions">
+<button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Create</button>
+<img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+<a href="#!/" class="btn btn-link">Cancel</a>
+</div>
+</form>
+</div>

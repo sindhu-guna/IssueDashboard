@@ -1,0 +1,34 @@
+<!--home.html-->
+<div class="col-md-6 col-md-offset-3">
+        <h2 style="text-align:center;color:blue">Home</h2>
+        <h3>Issue Dashboard</h3>  
+            <br/>
+            <div>
+                <div><h4 style="color:#00a3cc; float:left">List of Issues</h4></div>
+                <div style="float:right"><a href="#!/register" class="btn btn-info">New Issue</a></div> 
+            </div>
+            <br/>
+                    <table class = "table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr class = "info">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th ng-if="!ifSearchUser">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat = "user in vm.allUsers track by $index">
+                        <td><input type="text" ng-model="user.title" /></td>
+                        <td><input type="text" ng-model="user.description" /></td>
+                        <td>
+                        <div> 
+                            <a href="#" ng-click="edit(user)" role = "button" class = "btn btn-info">edit</a> &nbsp;
+                            <a href="#" ng-click="deleteCurrentIssue(user.id)" role = "button" class = "btn btn-danger">delete</a>
+                        </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                        </table>
+        </div>
+        </div>
+        
